@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
 
 import menjacnica.Valuta;
+import java.awt.Toolkit;
 
 public class IzvrsiZamenuGUI extends JFrame {
 
@@ -56,6 +57,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public IzvrsiZamenuGUI(MenjacnicaGUI glavniProzor, Valuta valuta) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(IzvrsiZamenuGUI.class.getResource("/icons/Screenshot.png")));
 		setTitle("Izvrsi zamenu");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
