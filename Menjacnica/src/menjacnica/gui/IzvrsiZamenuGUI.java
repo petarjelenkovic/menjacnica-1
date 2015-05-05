@@ -50,9 +50,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 	private JLabel lblKonacniIznos;
 	private JTextField textFieldKonacniIznos;
 
-	private MenjacnicaGUI glavniProzor;
-	private Valuta valuta;
-
+	
 	/**
 	 * Create the frame.
 	 */
@@ -82,9 +80,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 		contentPane.add(getLblKonacniIznos());
 		contentPane.add(getTextFieldKonacniIznos());
 		
-		//podesavanje
-		this.glavniProzor = glavniProzor;
-		this.valuta = valuta;
+		
 				
 		prikaziValutu();
 	}
@@ -234,22 +230,13 @@ public class IzvrsiZamenuGUI extends JFrame {
 	}
 	
 	private void prikaziValutu(){
-		textFieldProdajniKurs.setText(""+valuta.getProdajni());
-		textFieldKupovniKurs.setText(""+valuta.getKupovni());
-		textFieldValuta.setText(valuta.getSkraceniNaziv());
+		textFieldProdajniKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(4));
+		textFieldKupovniKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(5));
+		textFieldValuta.setText((String) GUIKontroler.valutineVrednosti(2));
 	}
 	
+	
 	private void izvrsiZamenu(){
-		try{
-			double konacniIznos = 
-					glavniProzor.sistem.izvrsiTransakciju(valuta,
-							rdbtnProdaja.isSelected(), 
-							Double.parseDouble(textFieldIznos.getText()));
-		
-			textFieldKonacniIznos.setText(""+konacniIznos);
-		} catch (Exception e1) {
-		JOptionPane.showMessageDialog(contentPane, e1.getMessage(),
-				"Greska", JOptionPane.ERROR_MESSAGE);
-	}
+		textFieldKonacniIznos.setText(""+ GUIKontroler.izvrsiZamenu(rdbtnProdaja.isSelected(), textFieldIznos.getText()));
 	}
 }
