@@ -138,14 +138,29 @@ public class GUIKontroler {
 		}
 	}
 	
-	public static Object valutineVrednosti(int a){
-		if(a==1) return valuta.getNaziv();
-		if(a==2) return valuta.getSkraceniNaziv();
-		if(a==3) return valuta.getSifra();
-		if(a==4) return valuta.getProdajni();
-		if(a==5) return valuta.getKupovni();
-		if(a==6) return valuta.getSrednji();
-		return null;
+	
+	public static String naziv(){
+		return valuta.getNaziv();
+	}
+	
+	public static String skraceni() {
+		return valuta.getSkraceniNaziv();
+	}
+	
+	public static int sifra(){
+		return valuta.getSifra();
+	}
+	
+	public static double prodajni(){
+		return valuta.getProdajni();
+	}
+	
+	public static double kupovni(){
+		return valuta.getKupovni();
+	}
+	
+	public static double srednji(){
+		return valuta.getSrednji();
 	}
 	
 	public static void prikaziIzvrsiZamenuGUI(Object obj) {

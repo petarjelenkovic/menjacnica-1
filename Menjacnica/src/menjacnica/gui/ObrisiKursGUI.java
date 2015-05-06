@@ -215,12 +215,12 @@ public class ObrisiKursGUI extends JFrame {
 	
 	private void prikaziValutu() {
 		// Prikaz podataka o valuti
-		textFieldNaziv.setText((String) GUIKontroler.valutineVrednosti(1));
-		textFieldSkraceniNaziv.setText((String) GUIKontroler.valutineVrednosti(2));
-		textFieldSifra.setText(""+(Integer) GUIKontroler.valutineVrednosti(3));
-		textFieldProdajniKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(4));
-		textFieldKupovniKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(5));
-		textFieldSrednjiKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(6));				
+		textFieldNaziv.setText(GUIKontroler.naziv());
+		textFieldSkraceniNaziv.setText(GUIKontroler.skraceni());
+		textFieldSifra.setText(""+GUIKontroler.sifra());
+		textFieldProdajniKurs.setText(""+GUIKontroler.prodajni());
+		textFieldKupovniKurs.setText(""+GUIKontroler.kupovni());
+		textFieldSrednjiKurs.setText(""+GUIKontroler.srednji());				
 	}
 
 	

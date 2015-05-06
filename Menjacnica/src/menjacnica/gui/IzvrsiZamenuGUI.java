@@ -230,9 +230,9 @@ public class IzvrsiZamenuGUI extends JFrame {
 	}
 	
 	private void prikaziValutu(){
-		textFieldProdajniKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(4));
-		textFieldKupovniKurs.setText(""+(Double) GUIKontroler.valutineVrednosti(5));
-		textFieldValuta.setText((String) GUIKontroler.valutineVrednosti(2));
+		textFieldProdajniKurs.setText(""+GUIKontroler.prodajni());
+		textFieldKupovniKurs.setText(""+GUIKontroler.kupovni());
+		textFieldValuta.setText(GUIKontroler.skraceni());
 	}
 	
 	
